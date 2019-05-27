@@ -41,6 +41,11 @@ class WeightedQuickUnion {
         return this.find(p) === this.find(q);
     }
 
+    /**
+     * 将小的树链接到大的树上面
+     * @param p
+     * @param q
+     */
     union(p, q) {
         const rootP = this.find(p);
         const rootQ = this.find(q);
