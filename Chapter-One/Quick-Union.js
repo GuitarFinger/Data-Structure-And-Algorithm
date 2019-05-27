@@ -18,6 +18,15 @@ class QuickUnion {
         }
     }
 
+    len() {
+        return this.count;
+    }
+
+    validate(p) {
+        if (p < 0 || p > this.parent.length) {
+            throw new Error(`index ${p} is not between 0 and ${this.parent.length-1}`);
+        }
+    }
 
     find(p) {
         while (p != this.id[p]) p = this.id[p];
@@ -54,7 +63,7 @@ const testFunc = (testData) => {
         console.log(`${p} ${q}`);
     }
 
-
+    console.log(`${unionFind.len()} components`);
 };
 
 testFunc(tinyUF.tinyUFData);
